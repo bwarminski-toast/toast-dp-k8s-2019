@@ -1,6 +1,7 @@
 import csv
 import random
 import datetime
+import time
 
 def generateRows():
     txId = 0
@@ -18,7 +19,11 @@ if __name__ == "__main__":
     # storeId rand 1-10
     # createdDate < purchaseDateTime
 
-    with open('data.csv', 'w') as f:
+    file_num = 0
+    with open(f'data_{file_num}.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerows(generateRows())
+
+    while True:
+        time.sleep(10)
     # write to file

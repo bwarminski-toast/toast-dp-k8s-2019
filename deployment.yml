@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csv-maker
+  labels:
+    app: csv-maker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csv-maker
+  template:
+    metadata:
+      labels:
+        app: csv-maker
+    spec:
+      containers:
+      - name: csv-maker
+        image: 645643289692.dkr.ecr.us-east-1.amazonaws.com/csv-maker:v1.1
+        ports:
+        - containerPort: 8080
